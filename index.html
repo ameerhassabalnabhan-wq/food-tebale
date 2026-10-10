@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول الطعام الأسبوعي</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="page-header">
+            <h1>جدول الطعام الأسبوعي</h1>
+            <p>برنامج وجبات العاملين</p>
+            <p id="current-date" class="current-date"></p>
+        </header>
+
+        <section class="today-section">
+            <div class="section-heading">
+                <span class="today-dot"></span>
+                <h2 id="today-title">وجبات اليوم</h2>
+                <span class="today-badge">اليوم الحالي</span>
+            </div>
+
+            <div id="today-meals" class="today-meals"></div>
+        </section>
+
+        <section class="week-section">
+            <h2 class="week-title">باقي أيام الأسبوع</h2>
+            <p class="section-hint">
+                اضغط على اسم اليوم أو السهم لعرض الوجبات.
+            </p>
+
+            <div id="days-list" class="days-list"></div>
+        </section>
+
+        <div class="note">
+            <h2>ملاحظة مهمة</h2>
+            <p>
+                إذا ما إجا الطباخ، يتم استبدال غداء العمال
+                بالرز بالماجي.
+            </p>
+        </div>
+
+        <footer>
+            نتمنى لكم وجبات شهية وأسبوعاً موفقاً
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --wine: #79273b;
+    --pink: #cf889a;
+    --pale-pink: #f8edf0;
+    --light-pink: #fff8fa;
+    --border: #ead5dc;
+    --text: #30272a;
+    --muted: #766a6e;
+}
+
+body {
+    margin: 0;
+    padding: 28px 16px;
+    background: var(--pale-pink);
+    color: var(--text);
+    font-family: Tahoma, Arial, sans-serif;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px #4716251a;
+}
+
+.page-header {
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+    background: var(--wine);
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: clamp(25px, 4vw, 34px);
+}
+
+.page-header p {
+    margin: 8px 0 0;
+}
+
+.current-date {
+    color: #f3dce2;
+    font-size: 14px;
+}
+
+.today-section,
+.week-section {
+    padding: 24px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.section-heading h2,
+.week-title {
+    margin: 0;
+    color: var(--wine);
+    font-size: 21px;
+}
+
+.today-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #398451;
+}
+
+.today-badge {
+    margin-right: auto;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #e6f4e9;
+    color: #24683a;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.today-meals,
+.day-meals {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.meal-card {
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--light-pink);
+}
+
+.meal-time {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--wine);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.meal-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.lunch-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.or-word {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.alternative {
+    color: var(--wine);
+}
+
+.section-hint {
+    margin: 5px 0 16px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.week-section {
+    padding-top: 4px;
+}
+
+.days-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.day-item {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+}
+
+.day-item[open] {
+    border-color: var(--pink);
+    background: var(--light-pink);
+}
+
+.day-item summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    cursor: pointer;
+    list-style: none;
+    font-weight: bold;
+    color: var(--wine);
+}
+
+.day-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.day-item summary::before {
+    content: "‹";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--pale-pink);
+    font-size: 23px;
+    transition: transform 0.2s;
+}
+
+.day-item[open] summary::before {
+    transform: rotate(-90deg);
+}
+
+.day-label {
+    flex: 1;
+}
+
+.day-meals {
+    padding: 0 14px 14px;
+}
+
+.day-meals .meal-card {
+    background: white;
+}
+
+.note {
+    margin: 4px 24px 24px;
+    padding: 18px 20px;
+    border-right: 5px solid #d99b28;
+    border-radius: 9px;
+    background: #fff2d8;
+}
+
+.note h2 {
+    margin: 0 0 5px;
+    color: #795317;
+    font-size: 18px;
+}
+
+.note p {
+    margin: 0;
+    color: #493a22;
+    font-weight: bold;
+}
+
+footer {
+    padding: 17px;
+    background: var(--wine);
+    color: white;
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px 6px;
+    }
+
+    .page-header {
+        padding: 24px 12px;
+    }
+
+    .today-section,
+    .week-section {
+        padding: 18px 12px;
+    }
+
+    .today-meals,
+    .day-meals {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2,
+    .week-title {
+        font-size: 19px;
+    }
+
+    .note {
+        margin: 4px 12px 18px;
+        padding: 15px;
+    }
+}
